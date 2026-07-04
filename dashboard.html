@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard · ADIS</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h1>ADIS</h1>
+        </div>
+
+        <div class="sidebar-badge">
+            <div class="label">Officer Credential</div>
+            <div class="officer-id" id="sidebarOfficerId">OFF-000000</div>
+            <div class="officer-name" id="sidebarOfficerName">Loading...</div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="athletes.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path></svg>
+                <span>Athletes</span>
+            </a>
+            <a href="samples.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v6L4 20a2 2 0 0 0 2 3h12a2 2 0 0 0 2-3L15 8V2"></path><path d="M9 2h6"></path><path d="M6 15h12"></path></svg>
+                <span>Samples</span>
+            </a>
+            <a href="reports.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 13h6"></path><path d="M9 17h6"></path></svg>
+                <span>Reports</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <button class="logout-btn" onclick="adisLogout()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="topbar">
+            <div>
+                <h2>Dashboard</h2>
+                <div class="tagline">Be true and fair</div>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-label">Athletes Registered</div>
+                    <div class="card-value" id="statAthletes">–</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Samples Collected</div>
+                    <div class="card-value" id="statSamples">–</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Pending Samples</div>
+                    <div class="card-value" id="statPending">–</div>
+                </div>
+                <div class="card">
+                    <div class="card-label">Reports Generated</div>
+                    <div class="card-value" id="statReports">–</div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Recently Registered Athletes</h3>
+                    <a href="athletes.html" class="btn btn-ghost">View all</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Athlete ID</th>
+                            <th>Name</th>
+                            <th>Sport</th>
+                            <th>Nationality</th>
+                        </tr>
+                    </thead>
+                    <tbody id="athletesTableBody">
+                        <tr class="empty-row"><td colspan="4">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Recent Samples</h3>
+                    <a href="samples.html" class="btn btn-ghost">View all</a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sample ID</th>
+                            <th>Athlete</th>
+                            <th>Type</th>
+                            <th>Collected</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="samplesTableBody">
+                        <tr class="empty-row"><td colspan="5">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="auth-guard.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>

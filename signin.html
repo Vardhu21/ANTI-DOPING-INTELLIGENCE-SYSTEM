@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>COLLEGE PROJECT</title>
+    <link rel="stylesheet" href="singinstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <video class="video" autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4" />
+    </video>
+
+    <nav class="navabar">
+        <h1 class="logo">PROJECT TITLE</h1>
+    </nav>
+
+    <form id="form">
+
+        <h3>USER CREDENTIALS</h3>
+
+        <p>BE TRUE AND FAIR</p>
+
+        <input type="text" id="username" placeholder="USERNAME" />
+        <input type="email" id="email" placeholder="EMAIL" />
+        <input type="password" id="password" placeholder="PASSWORD" />
+        <input type="tel" id="phonenumber" placeholder="PHONE NUMBER" />
+        <button type="submit" id="createaccount">CREATE ACCOUNT</button>
+
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="signup.js"></script>
+
+</body>
+
+</html>
