@@ -40,6 +40,9 @@ The system allows anti-doping officers to register athletes, collect biological 
 ## Project Purpose
 
 The purpose of this project is to demonstrate how a web-based system can organize athlete biological data and help visualize changes in biological markers over time.
+## How to Run the Project
+Clone the repository:
+git clone https://github.com/Vardhu21/ANTI-DOPING-INTELLIGENCE-SYSTEM.git
 
 ## Disclaimer
 
