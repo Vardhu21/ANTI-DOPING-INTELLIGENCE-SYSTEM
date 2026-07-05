@@ -102,16 +102,14 @@ async function loadReports() {
     `).join("");
 }
 
-// Simplified OFF-score, modeled loosely on the real ABP formula (Hb in g/L - 60 * sqrt(Ret%)).
-// This is an educational approximation only, not a clinical/regulatory calculation.
+
 function calcOffScore(hemoglobinGdl, reticulocytePct) {
     if (hemoglobinGdl == null || reticulocytePct == null || reticulocytePct <= 0) return null;
     const hbGl = hemoglobinGdl * 10;
     return hbGl - 60 * Math.sqrt(reticulocytePct);
 }
 
-// Flags a sample as anomalous if a marker jumps beyond a simple fixed threshold
-// vs. the athlete's own previous sample, or falls outside a broad reference range.
+
 function flagSample(current, previous) {
     const reasons = [];
 
@@ -161,7 +159,6 @@ async function viewReport(r) {
     const sampleIdText = r.samples ? r.samples.sample_id : "—";
     const sampleType = r.samples ? r.samples.sample_type : "—";
 
-    // Pull the athlete's full sample history (marker values) to build the passport trend.
     const { data: history, error: historyError } = await window.supabaseClient
         .from("samples")
         .select("sample_id, collection_date, hemoglobin, hematocrit, reticulocyte_percentage")
@@ -237,7 +234,7 @@ async function viewReport(r) {
 
     if (samples.length === 0) return;
 
-    // Inject Chart.js into the popup window and render the trend chart there.
+
     const chartScript = win.document.createElement("script");
     chartScript.src = "https://cdn.jsdelivr.net/npm/chart.js@4";
     chartScript.onload = () => {

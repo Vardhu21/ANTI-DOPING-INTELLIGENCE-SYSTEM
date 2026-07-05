@@ -27,7 +27,7 @@ body {
     display: flex;
 }
 
-/* ---------- SIDEBAR ---------- */
+
 
 .sidebar {
     width: 240px;
@@ -151,7 +151,6 @@ body {
     height: 18px;
 }
 
-/* ---------- MAIN AREA ---------- */
 
 .main {
     margin-left: 240px;
@@ -190,7 +189,7 @@ body {
     flex: 1;
 }
 
-/* ---------- CARDS ---------- */
+
 
 .cards {
     display: grid;
@@ -232,8 +231,6 @@ body {
     font-family: "Faustina", serif;
 }
 
-/* ---------- PANELS / SECTIONS ---------- */
-
 .panel {
     background-color: var(--panel);
     border: 1px solid var(--border);
@@ -255,7 +252,6 @@ body {
     font-size: 1.05rem;
 }
 
-/* ---------- BUTTONS ---------- */
 
 .btn {
     font-family: Arial, sans-serif;
@@ -288,7 +284,6 @@ body {
     color: var(--text);
 }
 
-/* ---------- TABLES ---------- */
 
 table {
     width: 100%;
@@ -327,7 +322,7 @@ tbody tr:hover {
     font-style: italic;
 }
 
-/* ---------- STATUS PILLS ---------- */
+
 
 .pill {
     display: inline-block;
@@ -354,7 +349,7 @@ tbody tr:hover {
     color: var(--gold);
 }
 
-/* ---------- MODAL ---------- */
+
 
 .modal-overlay {
     display: none;

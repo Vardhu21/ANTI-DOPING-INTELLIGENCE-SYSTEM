@@ -1,6 +1,4 @@
-// Protects a page: redirects to login.html if no active session.
-// Exposes window.currentUser and window.currentOfficer once ready.
-// Fires a "adis:ready" event on document when done.
+
 
 window.currentUser = null;
 window.currentOfficer = null;
